@@ -1,0 +1,61 @@
+name: PHP client mirror
+
+# Packagist reads only a composer.json at a repository's root, so php/client is mirrored to the
+# read-only decionis/php-client. A push to main updates the mirror's main; a php-client/vX.Y.Z tag
+# on main becomes the mirror's vX.Y.Z. Registering the package on Packagist stays a manual,
+# approved step.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "php/client/**"
+      - ".github/workflows/php-client-mirror.yml"
+    tags: ["php-client/v*"]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    name: Mirror to decionis/php-client
+    if: github.ref == 'refs/heads/main' || github.ref_type == 'tag'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check the tag
+        if: github.ref_type == 'tag'
+        run: |
+          [[ "${GITHUB_REF_NAME#php-client/}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?$ ]] \
+            || { echo "::error::${GITHUB_REF_NAME} is not php-client/vX.Y.Z"; exit 1; }
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main \
+            || { echo "::error::${GITHUB_REF_NAME} is not on main"; exit 1; }
+      - name: Split php/client
+        id: split
+        run: echo "sha=$(git subtree split --prefix=php/client HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Push
+        env:
+          # A fine-grained token limited to decionis/php-client, Contents read and write. The org
+          # disables deploy keys.
+          MIRROR_TOKEN: ${{ secrets.PHP_CLIENT_MIRROR_TOKEN }}
+          SHA: ${{ steps.split.outputs.sha }}
+        run: |
+          [ -n "$MIRROR_TOKEN" ] || { echo "::error::The PHP_CLIENT_MIRROR_TOKEN secret is not set"; exit 1; }
+          auth=$(printf 'x-access-token:%s' "$MIRROR_TOKEN" | base64 -w0)
+          echo "::add-mask::$auth"
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            ref="refs/tags/${GITHUB_REF_NAME#php-client/}"
+          else
+            ref="refs/heads/main"
+          fi
+          # No force: a mirror that diverged was pushed to directly, and that must fail loudly.
+          git -c http.https://github.com/.extraheader="AUTHORIZATION: basic $auth" \
+            push https://github.com/decionis/php-client.git "${SHA}:${ref}"

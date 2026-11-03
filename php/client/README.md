@@ -1,5 +1,6 @@
 <!--
-  Links verified live on 2026-11-03: decionis.com/contact, github.com/decionis/agent-safe-pipeline.
+  Links verified live on 2026-11-03: decionis.com/contact, github.com/decionis/agent-safe-pipeline,
+  github.com/decionis/packages.
   decionis/php-client is not on Packagist: add no install command until its page resolves.
 -->
 
@@ -128,6 +129,12 @@ to run it.
 Every error extends `DecionisException`. Its message is a stable code such as
 `UPSTREAM_UNREACHABLE` or `EVALUATION_RESPONSE_MALFORMED`. No error carries the API key, a request
 or response body, or a URL with query parameters.
+
+## Source
+
+The client is developed in `php/client` of
+[decionis/packages](https://github.com/decionis/packages), and `decionis/php-client` is its
+read-only mirror for Packagist. Send issues and pull requests to decionis/packages.
 
 ## Support and licence
 
