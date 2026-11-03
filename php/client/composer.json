@@ -1,0 +1,51 @@
+{
+  "name": "decionis/php-client",
+  "description": "PHP client for the Decionis execution authority: evaluate decisions, read Decision Dossiers, proof packets and Shadow reports, and verify Dossiers offline.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "homepage": "https://decionis.com",
+  "keywords": [
+    "decionis",
+    "commerce gate",
+    "decision dossier",
+    "agentsafe",
+    "ed25519"
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-json": "*",
+    "ext-sodium": "*",
+    "psr/http-client": "^1.0",
+    "psr/http-factory": "^1.0",
+    "psr/http-message": "^1.1 || ^2.0"
+  },
+  "require-dev": {
+    "nyholm/psr7": "^1.8",
+    "opis/json-schema": "^2.3",
+    "phpstan/phpstan": "^2.1",
+    "phpunit/phpunit": "^10.5"
+  },
+  "suggest": {
+    "ext-curl": "Needed by the bundled CurlClient; any PSR-18 client with finite timeouts works instead."
+  },
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "test/"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "8.1.0"
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "phpunit",
+    "analyse": "phpstan analyse --memory-limit=1G"
+  }
+}

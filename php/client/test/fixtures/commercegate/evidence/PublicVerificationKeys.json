@@ -1,0 +1,15 @@
+{
+  "synthetic": true,
+  "production_authority": false,
+  "keys": [
+    {
+      "crv": "Ed25519",
+      "x": "7UlYHcidppUDi_pszK1yBYUXDqNOQCFkZ9lHgRO0K_Y",
+      "kty": "OKP",
+      "kid": "synthetic-commerce-demo",
+      "use": "sig",
+      "alg": "EdDSA",
+      "key_ops": ["verify"]
+    }
+  ]
+}

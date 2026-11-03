@@ -1,0 +1,8 @@
+parameters:
+    level: 9
+    phpVersion: 80100
+    paths:
+        - src
+        - test
+    excludePaths:
+        - test/fixtures

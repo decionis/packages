@@ -1,0 +1,1053 @@
+{
+  "synthetic": true,
+  "issuer": "ephemeral_local_demonstration_key",
+  "production_authority": false,
+  "request": {
+    "org_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+    "decision_type": "PRICE_CHANGE",
+    "amount": 80,
+    "workflow_key": "commerce_price_change",
+    "transaction_type": "price_change",
+    "mode": "SHADOW",
+    "idempotency_key": "synthetic-missing-context",
+    "context": {
+      "commerce_action": {
+        "action_type": "PRICE_CHANGE",
+        "actor": {
+          "type": "AGENT",
+          "id": "synthetic-agent"
+        },
+        "platform": "generic",
+        "idempotency_key": "synthetic-missing-context",
+        "payload": {
+          "sku": "SYNTHETIC-SKU",
+          "from_price": 100,
+          "to_price": 80,
+          "estimated_cost": 60,
+          "currency": "SEK"
+        }
+      },
+      "commerce_preflight": {
+        "version": "commerce-preflight-v1",
+        "facts": {}
+      }
+    }
+  },
+  "response": {
+    "outcome": "ESCALATE",
+    "confidence": 0.94,
+    "policy_version": "synthetic-commerce-demo-v1",
+    "objective_profile": "risk_conservative",
+    "dossier_id": "0d6fd9b1-39f8-47f0-a45c-3c603507fb6d",
+    "dossier_sha256": "5fef899b17b71369a9edccb2d2160bf84096b8e644dbfce752f6942d72bbfb0e",
+    "evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+    "decision_resolution_id": "9fbf7a82-cd76-47ee-b903-9f46ef8ee69f",
+    "ledger_entry_id": "699818f1-a305-4b0a-b8ef-dbf06dadb426",
+    "ledger_entry_hash": "b2d62abf1df724c5b954fa109cb0bb48556b0071eb17341dba708509aaed4f91",
+    "mode": "SHADOW",
+    "fallback_to_legacy": true,
+    "fallback_reason": "mode_not_enforcement",
+    "enforcement_effect": {
+      "effective_mode": "SHADOW",
+      "verdict_effect": "OBSERVED",
+      "reason": "shadow_mode_observes_only"
+    },
+    "policy_bundle_resolution": {
+      "requested_policy_version": null,
+      "resolved_policy_version": "synthetic-commerce-demo-v1",
+      "status": "newest_active"
+    },
+    "reconciliation_required": true,
+    "reconciliation_status": "PENDING",
+    "rollout": {
+      "source": "REQUEST",
+      "decision_band": null,
+      "transaction_type": "price_change",
+      "configured_mode": null,
+      "effective_mode": "SHADOW",
+      "feature_flag": null,
+      "feature_flag_enabled": null
+    },
+    "governance_metrics": {
+      "override_drift_rate": 0.451,
+      "governance_tension_index": 0.2925,
+      "boundary_volatility_score": 0.11,
+      "decision_volume_under_governance": 1
+    },
+    "policy_guard": {
+      "status": "ready",
+      "requires_manual_review": false,
+      "total_bundle_count": 1,
+      "active_bundle_count": 1,
+      "active_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+      "active_bundle_version": "synthetic-commerce-demo-v1",
+      "active_effective_from": "2026-10-04T15:22:43.552Z",
+      "active_effective_to": null,
+      "latest_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+      "latest_bundle_version": "synthetic-commerce-demo-v1",
+      "latest_effective_from": "2026-10-04T15:22:43.552Z",
+      "latest_effective_to": null,
+      "reason": null,
+      "evaluated_at": "2026-10-04T15:23:43.607Z"
+    },
+    "policy_evaluation": {
+      "resolution": "matched_rule",
+      "bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+      "bundle_version": "synthetic-commerce-demo-v1",
+      "evaluated_at": "2026-10-04T15:23:43.607Z",
+      "decision_domain": "COMMERCE",
+      "evaluated_rule_count": 1,
+      "matched_rule_count": 1,
+      "matched_rule_ids": ["synthetic.baseline"],
+      "selected_rule_id": "synthetic.baseline",
+      "selected_rule_name": "Synthetic price baseline",
+      "selected_rule_action": "AUTO_APPROVE",
+      "selected_rule_priority": 1,
+      "selected_rule_rationale": null,
+      "selected_rule_severity": null,
+      "selected_rule_assignee_role": null,
+      "selected_rule_sla_minutes": null,
+      "selected_rule_authority": null,
+      "missing_required_signals": [],
+      "signal_admission_findings": [],
+      "shadowed_request_facts": [],
+      "commerce_preflight": {
+        "version": "commerce-preflight-v1",
+        "action_type": "PRICE_CHANGE",
+        "action_digest": "sha256:8757c7d82a255ec1774744747271fe0c9c1b9bab22ceb597851422b52eee668d",
+        "facts_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "policy_version": "synthetic-commerce-demo-v1",
+        "idempotency_key": "synthetic-missing-context",
+        "evaluated_at": "2026-10-04T15:23:43.607Z",
+        "disposition": "HOLD",
+        "execution_available": false,
+        "checks": [
+          {
+            "id": "P01",
+            "status": "missing_facts",
+            "verdict": "HOLD",
+            "reason_codes": ["REQUIRED_FACTS_MISSING"],
+            "missing_facts": ["facts.source", "facts.observed_at"]
+          },
+          {
+            "id": "P02",
+            "status": "missing_facts",
+            "verdict": "HOLD",
+            "reason_codes": ["REQUIRED_FACTS_MISSING"],
+            "missing_facts": ["facts.source", "facts.observed_at"]
+          },
+          {
+            "id": "P03",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P04",
+            "status": "missing_facts",
+            "verdict": "HOLD",
+            "reason_codes": ["REQUIRED_FACTS_MISSING"],
+            "missing_facts": ["facts.source", "facts.observed_at"]
+          },
+          {
+            "id": "P05",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P06",
+            "status": "missing_facts",
+            "verdict": "HOLD",
+            "reason_codes": ["REQUIRED_FACTS_MISSING"],
+            "missing_facts": ["facts.source", "facts.observed_at"]
+          },
+          {
+            "id": "P07",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P08",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P09",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P10",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          },
+          {
+            "id": "P11",
+            "status": "not_applicable",
+            "verdict": null,
+            "reason_codes": ["CHECK_NOT_APPLICABLE"],
+            "missing_facts": []
+          }
+        ]
+      }
+    },
+    "commerce_preflight": {
+      "version": "commerce-preflight-v1",
+      "action_type": "PRICE_CHANGE",
+      "action_digest": "sha256:8757c7d82a255ec1774744747271fe0c9c1b9bab22ceb597851422b52eee668d",
+      "facts_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "policy_version": "synthetic-commerce-demo-v1",
+      "idempotency_key": "synthetic-missing-context",
+      "evaluated_at": "2026-10-04T15:23:43.607Z",
+      "disposition": "HOLD",
+      "execution_available": false,
+      "checks": [
+        {
+          "id": "P01",
+          "status": "missing_facts",
+          "verdict": "HOLD",
+          "reason_codes": ["REQUIRED_FACTS_MISSING"],
+          "missing_facts": ["facts.source", "facts.observed_at"]
+        },
+        {
+          "id": "P02",
+          "status": "missing_facts",
+          "verdict": "HOLD",
+          "reason_codes": ["REQUIRED_FACTS_MISSING"],
+          "missing_facts": ["facts.source", "facts.observed_at"]
+        },
+        {
+          "id": "P03",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P04",
+          "status": "missing_facts",
+          "verdict": "HOLD",
+          "reason_codes": ["REQUIRED_FACTS_MISSING"],
+          "missing_facts": ["facts.source", "facts.observed_at"]
+        },
+        {
+          "id": "P05",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P06",
+          "status": "missing_facts",
+          "verdict": "HOLD",
+          "reason_codes": ["REQUIRED_FACTS_MISSING"],
+          "missing_facts": ["facts.source", "facts.observed_at"]
+        },
+        {
+          "id": "P07",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P08",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P09",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P10",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        },
+        {
+          "id": "P11",
+          "status": "not_applicable",
+          "verdict": null,
+          "reason_codes": ["CHECK_NOT_APPLICABLE"],
+          "missing_facts": []
+        }
+      ]
+    },
+    "policy_snapshot": {
+      "policy_version": "synthetic-commerce-demo-v1",
+      "policy_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+      "rules_sha256": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+      "parameters_sha256": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+      "effective_from": "2026-10-04T15:22:43.552Z",
+      "effective_to": null,
+      "evaluated_at": "2026-10-04T15:23:43.607Z",
+      "source": "org_policy_bundle"
+    },
+    "decision_domain": "COMMERCE",
+    "vertical_pack": {
+      "key": "commerce",
+      "source": "workflow_key",
+      "workflow_key": "commerce_price_change"
+    },
+    "protocol_version": "1.1",
+    "verdict": "ESCALATE",
+    "authority_classification": "OBSERVATIONAL",
+    "execution_eligible": false,
+    "policy_reference": {
+      "policy_id": "COMMERCE",
+      "revision_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+      "version": "synthetic-commerce-demo-v1",
+      "digest": "sha256:f6d1b5c8c3d76580c47473443a18485e4fbb6287242ecd80a626c63cf00f8010"
+    },
+    "evaluation_semantics": {
+      "protocol_version": "1.1",
+      "evaluator_version": "policy-graph/1.1+commerce-preflight/1.0",
+      "policy_schema_version": "1.0",
+      "canonicalization": "RFC8785/JCS",
+      "digest_algorithm": "SHA-256",
+      "signal_normalization_version": "external-signal-envelope/1.0"
+    },
+    "input_snapshot_digest": "sha256:ce34338bdb08191f23161b2dc4f2c8dead229bd7a68005e12e6003b749ecc0ae",
+    "execution_binding_digest": null,
+    "decision_chain": {
+      "chain_id": "1fc8699d-a027-4a19-b678-85444761746e",
+      "workflow_id": "commerce_price_change",
+      "step_id": "PRICE_CHANGE",
+      "sequence": 0,
+      "root_evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+      "parent_evaluation_ids": [],
+      "parent_dossier_ids": [],
+      "lineage_depth": 0,
+      "integrity_hash": "ea7f3228302f7f198aec3547c634072b83dc4e610fc6ca953d073a94c554b4b8",
+      "chain_api_path": "/v1/protocol/decision-chains/1fc8699d-a027-4a19-b678-85444761746e?org_id=aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+      "authority_classification": "OBSERVATIONAL",
+      "verdict": "ESCALATE",
+      "execution_binding_digest": null
+    },
+    "performance": {
+      "measured_at": "2026-10-04T15:23:43.607Z",
+      "total_latency_ms": 3.476,
+      "stages": {
+        "vertical_pack_resolution_ms": 0.01,
+        "sequence_context_resolution_ms": 0.002,
+        "rollout_resolution_ms": 0.004,
+        "policy_guard_resolution_ms": 0.03,
+        "dossier_build_ms": 1.21,
+        "resolution_write_ms": 0.073,
+        "ledger_append_ms": 0.153,
+        "evaluation_persist_ms": 0.04,
+        "authority_commit_ms": 1.33
+      }
+    },
+    "idempotent_replay": false
+  },
+  "dossier": {
+    "dossier_type": "FINANCE_ROUTING_DECISION_DOSSIER_V1",
+    "dossier_schema_version": "1.0.0",
+    "dossier_id": "0d6fd9b1-39f8-47f0-a45c-3c603507fb6d",
+    "evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+    "generated_at": "2026-10-04T15:23:43.608Z",
+    "actor": {
+      "id": "synthetic-agent",
+      "identity": null,
+      "kind": "AGENT",
+      "risk_class": null,
+      "source": null
+    },
+    "routing_decision": {
+      "decision_type": "PRICE_CHANGE",
+      "decision_domain": "COMMERCE",
+      "decision_band": null,
+      "transaction_type": "price_change",
+      "channel": null,
+      "outcome": "ESCALATE",
+      "reason_codes": ["PROTOCOL_OUTCOME_ESCALATE", "POLICY_MATCHED", "POLICY_ACTION_AUTO_APPROVE"],
+      "confidence": 0.94,
+      "policy_version": "synthetic-commerce-demo-v1",
+      "objective_profile": "risk_conservative",
+      "mode": "SHADOW",
+      "fallback_to_legacy": true,
+      "fallback_reason": "mode_not_enforcement",
+      "reconciliation_required": true,
+      "reconciliation_status": "PENDING",
+      "policy_guard": {
+        "status": "ready",
+        "requires_manual_review": false,
+        "total_bundle_count": 1,
+        "active_bundle_count": 1,
+        "active_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "active_bundle_version": "synthetic-commerce-demo-v1",
+        "active_effective_from": "2026-10-04T15:22:43.552Z",
+        "active_effective_to": null,
+        "latest_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "latest_bundle_version": "synthetic-commerce-demo-v1",
+        "latest_effective_from": "2026-10-04T15:22:43.552Z",
+        "latest_effective_to": null,
+        "reason": null,
+        "evaluated_at": "2026-10-04T15:23:43.607Z"
+      },
+      "policy_evaluation": {
+        "resolution": "matched_rule",
+        "bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "bundle_version": "synthetic-commerce-demo-v1",
+        "evaluated_at": "2026-10-04T15:23:43.607Z",
+        "decision_domain": "COMMERCE",
+        "evaluated_rule_count": 1,
+        "matched_rule_count": 1,
+        "matched_rule_ids": ["synthetic.baseline"],
+        "selected_rule_id": "synthetic.baseline",
+        "selected_rule_name": "Synthetic price baseline",
+        "selected_rule_action": "AUTO_APPROVE",
+        "selected_rule_priority": 1,
+        "selected_rule_rationale": null,
+        "selected_rule_severity": null,
+        "selected_rule_assignee_role": null,
+        "selected_rule_sla_minutes": null,
+        "selected_rule_authority": null,
+        "missing_required_signals": [],
+        "signal_admission_findings": [],
+        "shadowed_request_facts": [],
+        "commerce_preflight": {
+          "version": "commerce-preflight-v1",
+          "action_type": "PRICE_CHANGE",
+          "action_digest": "sha256:8757c7d82a255ec1774744747271fe0c9c1b9bab22ceb597851422b52eee668d",
+          "facts_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "policy_version": "synthetic-commerce-demo-v1",
+          "idempotency_key": "synthetic-missing-context",
+          "evaluated_at": "2026-10-04T15:23:43.607Z",
+          "disposition": "HOLD",
+          "execution_available": false,
+          "checks": [
+            {
+              "id": "P01",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P02",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P03",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P04",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P05",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P06",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P07",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P08",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P09",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P10",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P11",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            }
+          ]
+        }
+      },
+      "policy_snapshot": {
+        "policy_version": "synthetic-commerce-demo-v1",
+        "policy_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "rules_sha256": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+        "parameters_sha256": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+        "effective_from": "2026-10-04T15:22:43.552Z",
+        "effective_to": null,
+        "evaluated_at": "2026-10-04T15:23:43.607Z",
+        "source": "org_policy_bundle"
+      },
+      "vertical_pack": {
+        "key": "commerce",
+        "source": "workflow_key",
+        "workflow_key": "commerce_price_change"
+      },
+      "decision_chain": {
+        "chain_id": "1fc8699d-a027-4a19-b678-85444761746e",
+        "workflow_id": "commerce_price_change",
+        "step_id": "PRICE_CHANGE",
+        "sequence": 0,
+        "root_evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+        "parent_evaluation_ids": [],
+        "parent_dossier_ids": [],
+        "lineage_depth": 0,
+        "integrity_hash": "ea7f3228302f7f198aec3547c634072b83dc4e610fc6ca953d073a94c554b4b8",
+        "chain_api_path": "/v1/protocol/decision-chains/1fc8699d-a027-4a19-b678-85444761746e?org_id=aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+        "authority_classification": "OBSERVATIONAL",
+        "verdict": "ESCALATE",
+        "execution_binding_digest": null
+      }
+    },
+    "rollout": {
+      "source": "REQUEST",
+      "decision_band": null,
+      "transaction_type": "price_change",
+      "configured_mode": null,
+      "effective_mode": "SHADOW",
+      "feature_flag": null,
+      "feature_flag_enabled": null
+    },
+    "decision_chain": {
+      "chain_id": "1fc8699d-a027-4a19-b678-85444761746e",
+      "workflow_id": "commerce_price_change",
+      "step_id": "PRICE_CHANGE",
+      "sequence": 0,
+      "root_evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+      "parent_evaluation_ids": [],
+      "parent_dossier_ids": [],
+      "lineage_depth": 0,
+      "integrity_hash": "ea7f3228302f7f198aec3547c634072b83dc4e610fc6ca953d073a94c554b4b8",
+      "chain_api_path": "/v1/protocol/decision-chains/1fc8699d-a027-4a19-b678-85444761746e?org_id=aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaa1",
+      "authority_classification": "OBSERVATIONAL",
+      "verdict": "ESCALATE",
+      "execution_binding_digest": null
+    },
+    "governance": {
+      "metrics": {
+        "override_drift_rate": 0.451,
+        "governance_tension_index": 0.2925,
+        "boundary_volatility_score": 0.11,
+        "decision_volume_under_governance": 1
+      },
+      "fallback_to_legacy": true,
+      "fallback_reason": "mode_not_enforcement",
+      "reconciliation_required": true,
+      "reconciliation_status": "PENDING",
+      "policy_guard": {
+        "status": "ready",
+        "requires_manual_review": false,
+        "total_bundle_count": 1,
+        "active_bundle_count": 1,
+        "active_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "active_bundle_version": "synthetic-commerce-demo-v1",
+        "active_effective_from": "2026-10-04T15:22:43.552Z",
+        "active_effective_to": null,
+        "latest_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "latest_bundle_version": "synthetic-commerce-demo-v1",
+        "latest_effective_from": "2026-10-04T15:22:43.552Z",
+        "latest_effective_to": null,
+        "reason": null,
+        "evaluated_at": "2026-10-04T15:23:43.607Z"
+      },
+      "policy_evaluation": {
+        "resolution": "matched_rule",
+        "bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "bundle_version": "synthetic-commerce-demo-v1",
+        "evaluated_at": "2026-10-04T15:23:43.607Z",
+        "decision_domain": "COMMERCE",
+        "evaluated_rule_count": 1,
+        "matched_rule_count": 1,
+        "matched_rule_ids": ["synthetic.baseline"],
+        "selected_rule_id": "synthetic.baseline",
+        "selected_rule_name": "Synthetic price baseline",
+        "selected_rule_action": "AUTO_APPROVE",
+        "selected_rule_priority": 1,
+        "selected_rule_rationale": null,
+        "selected_rule_severity": null,
+        "selected_rule_assignee_role": null,
+        "selected_rule_sla_minutes": null,
+        "selected_rule_authority": null,
+        "missing_required_signals": [],
+        "signal_admission_findings": [],
+        "shadowed_request_facts": [],
+        "commerce_preflight": {
+          "version": "commerce-preflight-v1",
+          "action_type": "PRICE_CHANGE",
+          "action_digest": "sha256:8757c7d82a255ec1774744747271fe0c9c1b9bab22ceb597851422b52eee668d",
+          "facts_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "policy_version": "synthetic-commerce-demo-v1",
+          "idempotency_key": "synthetic-missing-context",
+          "evaluated_at": "2026-10-04T15:23:43.607Z",
+          "disposition": "HOLD",
+          "execution_available": false,
+          "checks": [
+            {
+              "id": "P01",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P02",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P03",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P04",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P05",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P06",
+              "status": "missing_facts",
+              "verdict": "HOLD",
+              "reason_codes": ["REQUIRED_FACTS_MISSING"],
+              "missing_facts": ["facts.source", "facts.observed_at"]
+            },
+            {
+              "id": "P07",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P08",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P09",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P10",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            },
+            {
+              "id": "P11",
+              "status": "not_applicable",
+              "verdict": null,
+              "reason_codes": ["CHECK_NOT_APPLICABLE"],
+              "missing_facts": []
+            }
+          ]
+        }
+      },
+      "policy_snapshot": {
+        "policy_version": "synthetic-commerce-demo-v1",
+        "policy_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "rules_sha256": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+        "parameters_sha256": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+        "effective_from": "2026-10-04T15:22:43.552Z",
+        "effective_to": null,
+        "evaluated_at": "2026-10-04T15:23:43.607Z",
+        "source": "org_policy_bundle"
+      }
+    },
+    "inputs_snapshot": {
+      "decision_type": "PRICE_CHANGE",
+      "channel": null,
+      "source": null,
+      "policy_version": "synthetic-commerce-demo-v1",
+      "objective_profile": "risk_conservative",
+      "vertical_pack": null,
+      "workflow_key": "commerce_price_change",
+      "mode": "SHADOW",
+      "decision_band": null,
+      "transaction_type": "price_change",
+      "amount": 80,
+      "risk_score": null,
+      "context_commitment": {
+        "version": "1.0",
+        "canonicalization": "RFC8785/JCS",
+        "digest": "sha256:4bfabc2d69adadb098aa2b0ed5ffb019c8979da8d27dd2ee4913c42898170609",
+        "evidence_hash": "b31c97f1970a782a3983787f6c03cece1dfc8a19b32f0f6be7ba35e832433c30",
+        "artifact_reference": {
+          "kind": "DECISION_EVALUATION_REQUEST",
+          "evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+          "document_path": "/request_payload/context",
+          "access": "AUTHORIZED"
+        }
+      }
+    },
+    "authority_evidence": {
+      "protocol_version": "1.1",
+      "evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+      "dossier_id": "0d6fd9b1-39f8-47f0-a45c-3c603507fb6d",
+      "evaluation_mode": "SHADOW",
+      "authority_classification": "OBSERVATIONAL",
+      "verdict": "ESCALATE",
+      "execution_eligible": false,
+      "policy_reference": {
+        "policy_id": "COMMERCE",
+        "revision_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+        "version": "synthetic-commerce-demo-v1",
+        "digest": "sha256:f6d1b5c8c3d76580c47473443a18485e4fbb6287242ecd80a626c63cf00f8010"
+      },
+      "evaluation_semantics": {
+        "protocol_version": "1.1",
+        "evaluator_version": "policy-graph/1.1+commerce-preflight/1.0",
+        "policy_schema_version": "1.0",
+        "canonicalization": "RFC8785/JCS",
+        "digest_algorithm": "SHA-256",
+        "signal_normalization_version": "external-signal-envelope/1.0"
+      },
+      "input_snapshot_digest": "sha256:ce34338bdb08191f23161b2dc4f2c8dead229bd7a68005e12e6003b749ecc0ae",
+      "execution_binding_digest": null
+    },
+    "evidence": {
+      "context_hashes": ["b31c97f1970a782a3983787f6c03cece1dfc8a19b32f0f6be7ba35e832433c30"]
+    },
+    "portable_artifact": {
+      "artifact": {
+        "kind": "Decision Dossier",
+        "title": "PRICE_CHANGE Decision Dossier",
+        "summary": "ESCALATE at 94.0% confidence under synthetic-commerce-demo-v1.",
+        "message": "Logs explain what systems did. Decision Dossiers explain why systems acted."
+      },
+      "human_readable": {
+        "lines": [
+          "Decision: PRICE_CHANGE",
+          "Outcome: ESCALATE",
+          "Confidence: 94.0%",
+          "Policy Version: synthetic-commerce-demo-v1",
+          "Policy Rule: synthetic.baseline (AUTO_APPROVE)",
+          "Policy Snapshot: synthetic-commerce-demo-v1 - 96658b6c-635c-42b3-a116-e5b9f27e6044",
+          "Signals Evaluated: 2",
+          "Timestamp: 2026-10-04T15:23:43.608Z"
+        ],
+        "markdown": "Decision: PRICE_CHANGE\nOutcome: ESCALATE\nConfidence: 94.0%\nPolicy Version: synthetic-commerce-demo-v1\nPolicy Rule: synthetic.baseline (AUTO_APPROVE)\nPolicy Snapshot: synthetic-commerce-demo-v1 - 96658b6c-635c-42b3-a116-e5b9f27e6044\nSignals Evaluated: 2\nTimestamp: 2026-10-04T15:23:43.608Z"
+      },
+      "machine_readable": {
+        "dossier_id": "0d6fd9b1-39f8-47f0-a45c-3c603507fb6d",
+        "evaluation_id": "50c7c33f-71d5-407c-9b5a-990b0329a5fe",
+        "decision_type": "PRICE_CHANGE",
+        "decision_domain": "COMMERCE",
+        "source_system": null,
+        "entity": null,
+        "entity_id": null,
+        "action": null,
+        "actor": {
+          "id": "synthetic-agent",
+          "identity": null,
+          "kind": "AGENT",
+          "risk_class": null,
+          "source": null
+        },
+        "outcome": "ESCALATE",
+        "reason_codes": [
+          "PROTOCOL_OUTCOME_ESCALATE",
+          "POLICY_MATCHED",
+          "POLICY_ACTION_AUTO_APPROVE"
+        ],
+        "confidence": 0.94,
+        "confidence_percent": "94.0%",
+        "policy_version": "synthetic-commerce-demo-v1",
+        "policy_evaluation": {
+          "resolution": "matched_rule",
+          "bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+          "bundle_version": "synthetic-commerce-demo-v1",
+          "evaluated_at": "2026-10-04T15:23:43.607Z",
+          "decision_domain": "COMMERCE",
+          "evaluated_rule_count": 1,
+          "matched_rule_count": 1,
+          "matched_rule_ids": ["synthetic.baseline"],
+          "selected_rule_id": "synthetic.baseline",
+          "selected_rule_name": "Synthetic price baseline",
+          "selected_rule_action": "AUTO_APPROVE",
+          "selected_rule_priority": 1,
+          "selected_rule_rationale": null,
+          "selected_rule_severity": null,
+          "selected_rule_assignee_role": null,
+          "selected_rule_sla_minutes": null,
+          "selected_rule_authority": null,
+          "missing_required_signals": [],
+          "signal_admission_findings": [],
+          "shadowed_request_facts": [],
+          "commerce_preflight": {
+            "version": "commerce-preflight-v1",
+            "action_type": "PRICE_CHANGE",
+            "action_digest": "sha256:8757c7d82a255ec1774744747271fe0c9c1b9bab22ceb597851422b52eee668d",
+            "facts_digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "policy_version": "synthetic-commerce-demo-v1",
+            "idempotency_key": "synthetic-missing-context",
+            "evaluated_at": "2026-10-04T15:23:43.607Z",
+            "disposition": "HOLD",
+            "execution_available": false,
+            "checks": [
+              {
+                "id": "P01",
+                "status": "missing_facts",
+                "verdict": "HOLD",
+                "reason_codes": ["REQUIRED_FACTS_MISSING"],
+                "missing_facts": ["facts.source", "facts.observed_at"]
+              },
+              {
+                "id": "P02",
+                "status": "missing_facts",
+                "verdict": "HOLD",
+                "reason_codes": ["REQUIRED_FACTS_MISSING"],
+                "missing_facts": ["facts.source", "facts.observed_at"]
+              },
+              {
+                "id": "P03",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P04",
+                "status": "missing_facts",
+                "verdict": "HOLD",
+                "reason_codes": ["REQUIRED_FACTS_MISSING"],
+                "missing_facts": ["facts.source", "facts.observed_at"]
+              },
+              {
+                "id": "P05",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P06",
+                "status": "missing_facts",
+                "verdict": "HOLD",
+                "reason_codes": ["REQUIRED_FACTS_MISSING"],
+                "missing_facts": ["facts.source", "facts.observed_at"]
+              },
+              {
+                "id": "P07",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P08",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P09",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P10",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              },
+              {
+                "id": "P11",
+                "status": "not_applicable",
+                "verdict": null,
+                "reason_codes": ["CHECK_NOT_APPLICABLE"],
+                "missing_facts": []
+              }
+            ]
+          }
+        },
+        "policy_snapshot": {
+          "policy_version": "synthetic-commerce-demo-v1",
+          "policy_bundle_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+          "rules_sha256": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+          "parameters_sha256": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+          "effective_from": "2026-10-04T15:22:43.552Z",
+          "effective_to": null,
+          "evaluated_at": "2026-10-04T15:23:43.607Z",
+          "source": "org_policy_bundle"
+        },
+        "objective_profile": "risk_conservative",
+        "mode": "SHADOW",
+        "protocol_version": "1.1",
+        "verdict": "ESCALATE",
+        "authority_classification": "OBSERVATIONAL",
+        "execution_eligible": false,
+        "policy_reference": {
+          "policy_id": "COMMERCE",
+          "revision_id": "96658b6c-635c-42b3-a116-e5b9f27e6044",
+          "version": "synthetic-commerce-demo-v1",
+          "digest": "sha256:f6d1b5c8c3d76580c47473443a18485e4fbb6287242ecd80a626c63cf00f8010"
+        },
+        "evaluation_semantics": {
+          "protocol_version": "1.1",
+          "evaluator_version": "policy-graph/1.1+commerce-preflight/1.0",
+          "policy_schema_version": "1.0",
+          "canonicalization": "RFC8785/JCS",
+          "digest_algorithm": "SHA-256",
+          "signal_normalization_version": "external-signal-envelope/1.0"
+        },
+        "input_snapshot_digest": "sha256:ce34338bdb08191f23161b2dc4f2c8dead229bd7a68005e12e6003b749ecc0ae",
+        "execution_binding_digest": null,
+        "issuer_context": null,
+        "signals_evaluated": 2,
+        "evidence_hash_count": 1,
+        "generated_at": "2026-10-04T15:23:43.608Z"
+      }
+    },
+    "integrity": {
+      "payload_sha256": "5fef899b17b71369a9edccb2d2160bf84096b8e644dbfce752f6942d72bbfb0e",
+      "payload_digest_profile": "DECIONIS_DOSSIER_CONTENT_V2",
+      "payload_canonicalization_profile": "RFC8785/JCS",
+      "decision_resolution_id": "9fbf7a82-cd76-47ee-b903-9f46ef8ee69f",
+      "ledger_entry_id": "699818f1-a305-4b0a-b8ef-dbf06dadb426",
+      "ledger_entry_hash": "b2d62abf1df724c5b954fa109cb0bb48556b0071eb17341dba708509aaed4f91",
+      "ledger_chain_verified": false,
+      "proof_bundle": {
+        "bundle_type": "decionis.decision_dossier.proof_bundle",
+        "version": "2.0",
+        "issued_at": "2026-10-04T15:23:43.608Z",
+        "algorithm": "Ed25519",
+        "key_id": "synthetic-commerce-demo",
+        "rotation_policy": {
+          "strategy": "JWKS_OVERLAP",
+          "active_key_id": "synthetic-commerce-demo",
+          "previous_key_ids": [],
+          "verification_grace_period_days": 90,
+          "rotated_at": null,
+          "public_jwks_path": "/.well-known/decision-dossier-jwks.json"
+        },
+        "artifacts": [
+          {
+            "artifact_kind": "portable_artifact",
+            "media_type": "application/json",
+            "document_path": "/portable_artifact",
+            "canonical_document_sha256": "4c09f41bbf74de7ed4634343a168a126aa77cbacdc21684c95fb08c73fa5c0a2",
+            "signature": "1Iv961NPkHrFjsLhuqhTRU38u0hns0DzD8yn8Teks_ppM5MaiuflJRrhjipQ0SVk0j1ktXWvK7nkKCjn5r4oDw"
+          },
+          {
+            "artifact_kind": "inputs_snapshot",
+            "media_type": "application/json",
+            "document_path": "/inputs_snapshot",
+            "canonical_document_sha256": "ce34338bdb08191f23161b2dc4f2c8dead229bd7a68005e12e6003b749ecc0ae",
+            "signature": "LfSjInBysMt3qeVRuuvTxEeVeRzlh1cG-mrmsw03ubUWCQAdD9j-nBMKVUZ2xWKqzP5Ov5NK4xX_7a8poVW4DA"
+          }
+        ]
+      }
+    }
+  },
+  "verification": {
+    "signature_verified": true,
+    "required_artifact_coverage_verified": true,
+    "key_id_matched": true,
+    "key_unavailable": false,
+    "artifact_results": [
+      {
+        "artifact_kind": "portable_artifact",
+        "document_path": "/portable_artifact",
+        "document_found": true,
+        "digest_matched": true,
+        "signature_verified": true
+      },
+      {
+        "artifact_kind": "inputs_snapshot",
+        "document_path": "/inputs_snapshot",
+        "document_found": true,
+        "digest_matched": true,
+        "signature_verified": true
+      }
+    ]
+  },
+  "reproduction": {
+    "recorded_outcome": "ESCALATE",
+    "policy_version": "synthetic-commerce-demo-v1",
+    "decision_domain": "COMMERCE",
+    "evaluated_at": "2026-10-04T15:23:43.607Z",
+    "rules_sha256_recorded": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+    "rules_sha256_recomputed": "da0902cb7af4ab5f5f801b9e6546c6a2a26300a28044e49acc80199d7cbb63e8",
+    "rules_sha256_match": true,
+    "parameters_sha256_recorded": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+    "parameters_sha256_recomputed": "42c46507eccfeb0f9dcf73476e8793a2caffd63c6caab087f9dd274f75d88d3d",
+    "parameters_sha256_match": true,
+    "status": "reproduced",
+    "reproduced_outcome": "ESCALATE",
+    "outcome_matches": true,
+    "detail": "Protocol 1.1 replay reproduced the recorded outcome from the proof-covered canonical inputs, exact immutable policy revision, and explicitly supported evaluator semantics."
+  }
+}

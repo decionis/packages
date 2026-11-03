@@ -1,0 +1,16 @@
+# Gitleaks config for decionis/packages — extends the default ruleset.
+[extend]
+useDefault = true
+
+[allowlist]
+description = """The AgentSafe agent-safe.intent/1 conformance vectors' idempotency keys
+(refund-synthetic-1001-v1, and refund-synthetic-1-langchain-v1 and
+refund-synthetic-1-vercel-v1 from its framework vectors) are public synthetic
+request identifiers, not credentials; the generic rule matches them because
+the field is named idempotency_key (php/client test fixtures). Only these
+literal public identifiers are allowlisted — never add actual credentials here."""
+regexes = [
+  '''refund-synthetic-1001-v1''',
+  '''refund-synthetic-1-langchain-v1''',
+  '''refund-synthetic-1-vercel-v1''',
+]

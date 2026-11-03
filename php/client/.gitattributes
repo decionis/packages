@@ -1,0 +1,6 @@
+# Keep the tests and their fixtures out of the installed package.
+/test export-ignore
+/phpunit.xml.dist export-ignore
+/phpstan.neon.dist export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
