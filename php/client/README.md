@@ -1,7 +1,6 @@
 <!--
   Links verified live on 2026-11-03: decionis.com/contact, github.com/decionis/agent-safe-pipeline,
-  github.com/decionis/packages.
-  decionis/php-client is not on Packagist: add no install command until its page resolves.
+  github.com/decionis/packages, packagist.org/packages/decionis/php-client.
 -->
 
 # decionis/php-client
@@ -26,8 +25,17 @@ What it covers:
 
 ## Install
 
-`decionis/php-client` is not on Packagist yet. It ships inside Decionis for Drupal. To use it in
-another PHP store, [contact Decionis](https://decionis.com/contact) for early access.
+Install the client from [Packagist](https://packagist.org/packages/decionis/php-client):
+
+```bash
+composer require decionis/php-client:^0.1.0
+```
+
+The example below also uses `nyholm/psr7` for its PSR-17 factories:
+
+```bash
+composer require nyholm/psr7:^1.8
+```
 
 Requirements: PHP 8.1 or later, `ext-json`, `ext-sodium`, a PSR-18 HTTP client and PSR-17
 factories. `ext-curl` is needed only for the bundled `CurlClient`.
