@@ -65,7 +65,6 @@ final class CurlClient implements ClientInterface
         $ok = curl_exec($handle);
         $status = (int) curl_getinfo($handle, CURLINFO_RESPONSE_CODE);
         $errno = curl_errno($handle);
-        curl_close($handle);
         if ($ok === false || $status === 0) {
             throw new NetworkError($request, $errno);
         }
