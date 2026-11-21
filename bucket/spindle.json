@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/decionis/spindle/releases/download/v0.2.0/spindle_0.2.0_windows_amd64.zip",
+            "bin": [
+                "spindle.exe"
+            ],
+            "hash": "726f168869a1f6c45551b8ad771e035fc93aa72b537e0dbf59a6d97428a495ed"
+        },
+        "arm64": {
+            "url": "https://github.com/decionis/spindle/releases/download/v0.2.0/spindle_0.2.0_windows_arm64.zip",
+            "bin": [
+                "spindle.exe"
+            ],
+            "hash": "1dddde52a2f04d1dd046fcaa2d461feab9c626f989a1792626d3bfde9fbd8f38"
+        }
+    },
+    "homepage": "https://github.com/decionis/spindle",
+    "license": "Apache-2.0",
+    "description": "Turn useful IRC discussion into durable NNTP decisions"
+}
