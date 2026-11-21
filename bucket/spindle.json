@@ -1,19 +1,19 @@
 {
-    "version": "0.3.0",
+    "version": "0.4.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/decionis/spindle/releases/download/v0.3.0/spindle_0.3.0_windows_amd64.zip",
+            "url": "https://github.com/decionis/spindle/releases/download/v0.4.0/spindle_0.4.0_windows_amd64.zip",
             "bin": [
                 "spindle.exe"
             ],
-            "hash": "d1563470d30c2389d50eee015adde090f088ae20cb20945a9fa3ad9a70ddfaa9"
+            "hash": "ae42648816bacda3cb652ed280d9e70925c345651c9ede148f58d5ecc246c333"
         },
         "arm64": {
-            "url": "https://github.com/decionis/spindle/releases/download/v0.3.0/spindle_0.3.0_windows_arm64.zip",
+            "url": "https://github.com/decionis/spindle/releases/download/v0.4.0/spindle_0.4.0_windows_arm64.zip",
             "bin": [
                 "spindle.exe"
             ],
-            "hash": "f5c79ae1c54ddc146af855ddfaef523e2878abbf3c536d093c0d522beebaa880"
+            "hash": "e9b8af64f5c360e4ca62df960a730b28d83ff8576313a7bb7fa57e20e101f4ca"
         }
     },
     "homepage": "https://github.com/decionis/spindle",
