@@ -9,25 +9,25 @@ cask "spindle" do
     end
   end
 
-  version "0.6.0"
+  version "0.7.0"
 
   on_macos do
     on_arm do
-      sha256 "a5f8df7f3f3bd854327f909ac17d6c89614ffec93985e2ab59f8335d9949c95d"
+      sha256 "02d2d37f1459f110c87c7871b94189b4a473a4b6977fd7a2a85cb9326d1a14b7"
       url "https://github.com/decionis/spindle/releases/download/v#{version}/spindle_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "1e88942bdbfdad4504c0c9565c8badbf0e445d148817883c26048cb97cb01f98"
+      sha256 "eca3e97b24a1e1ee12f32d6063aba4fd116ac74833119f14431ec0b25e0cd9ce"
       url "https://github.com/decionis/spindle/releases/download/v#{version}/spindle_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "941e6cf627133446060c2edff3810409a689b12e31a488b41bce5c39fa666432"
+      sha256 "82074480b83dff99df035e67312272ac8e90b87b80f36ad599367581d6ec51e7"
       url "https://github.com/decionis/spindle/releases/download/v#{version}/spindle_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "c9db6bd2bc705c7bf085bc148321e159ba3abc9ee1c0727317676cd38c93c7b8"
+      sha256 "c9116e35d0b8b4a1b133eb4ad3d0c8a2933f6096adc656bac42740f1823c7c9b"
       url "https://github.com/decionis/spindle/releases/download/v#{version}/spindle_#{version}_linux_amd64.tar.gz"
     end
   end
